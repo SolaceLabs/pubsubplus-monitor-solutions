@@ -1,0 +1,3 @@
+[submodule "solace-prometheus-exporter"]
+	path = solace-prometheus-exporter
+	url = git@github.com:solacecommunity/solace-prometheus-exporter
