@@ -1,0 +1,10 @@
+[Unit]
+Description=Job that runs the Solace StatsPump service
+
+[Service]
+Type=simple
+ExecStart=/opt/statspump/bin/statspump /opt/statspump/config/pollers_default.xml /opt/statspump/config/groups_default.xml /opt/statspump/config/appliances.xml
+
+
+[Install]
+WantedBy=multi-user.target

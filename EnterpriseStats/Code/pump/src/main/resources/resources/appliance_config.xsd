@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="backup-mode-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="active"/>
+      <xs:enumeration value="standby"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="appliance-semp-details-type">
+    <xs:sequence>
+      <xs:element name="semp-host" type="xs:string"/>
+      <xs:element name="cli-username" type="xs:string"/>
+      <xs:element name="cli-password" type="xs:string"/>
+      <xs:element name="secure" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="exception-default-action-type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALLOW"/>
+      <xs:enumeration value="DISALLOW"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="appliances">
+    <xs:complexType>
+      <xs:sequence>
+		<!-- These setting control behaviours that affect all router connections -->
+		<xs:element name="publishTtl" type="xs:long"/> <!-- ttl is in ms -->
+		<xs:element name="publishDmqEligible" type="xs:boolean"/> 
+        <!-- xs:element name="stats-pump-mgmt-appliance" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="msg-bus" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="host" type="xs:string"/>
+                    <xs:element name="vpn" type="xs:string"/>
+                    <xs:element name="client-username" type="xs:string"/>
+                    <xs:element name="password" type="xs:string" minOccurs="0"/>
+                    <xs:element name="queue" type="xs:string" minOccurs="0"/>
+                    <xs:element name="container-factory-class" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element-->
+        <xs:element name="appliance" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="poller-group" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="primary" type="appliance-semp-details-type"/>
+              <xs:element name="backup" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="appliance-semp-details-type">
+                      <xs:attribute name="mode" type="backup-mode-type" use="required"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="mgmt-msg-bus" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="host" type="xs:string"/>
+                    <xs:element name="vpn" type="xs:string"/>
+                    <xs:element name="client-username" type="xs:string"/>
+                    <xs:element name="password" type="xs:string" minOccurs="0"/>
+                    <xs:element name="container-factory-class" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="local-mgmt-msg-bus" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="host" type="xs:string" minOccurs="0"/>
+                    <xs:element name="local-listener-class" type="xs:string"/>
+                    <xs:element name="local-listener-config" type="xs:string"/>
+                    <xs:element name="container-factory-class" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="self-msg-bus" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="host" type="xs:string"/>               <!-- n/a: it's required now. if omitted, assume it's the same as mgmt -->
+                    <xs:choice minOccurs="0">
+                      <xs:element name="vpn" type="xs:string"/>              <!-- if omitted, use the actual VPN's name (i.e. 'self') -->
+                      <xs:element name="vpn-connection-acl-settings">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element type="xs:string" name="vpn-exception" maxOccurs="unbounded"/>
+                          </xs:sequence>
+                          <xs:attribute name="default-action" type="exception-default-action-type" use="required"/>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:choice>
+                    <xs:element name="client-username" type="xs:string"/>
+                    <xs:element name="password" type="xs:string" minOccurs="0"/>         <!-- if omitted, don't supply one -->
+                    <xs:element name="container-factory-class" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+	  </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

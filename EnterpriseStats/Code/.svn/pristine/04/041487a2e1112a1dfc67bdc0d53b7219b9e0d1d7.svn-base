@@ -1,0 +1,10 @@
+[Unit]
+Description=Job that runs the Solace StatsReceiver service
+
+[Service]
+Type=simple
+Environment=/opt/stats-receiver
+ExecStart=/opt/stats-receiver/bin/stats-receiver --config /opt/stats-receiver/config/stats-receiver.properties
+
+[Install]
+WantedBy=multi-user.target

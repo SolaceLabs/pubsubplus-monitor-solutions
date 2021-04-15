@@ -1,0 +1,4 @@
+Dockerfile
+.git
+dd-solace-agent*.tar.gz
+docker.build.sh
