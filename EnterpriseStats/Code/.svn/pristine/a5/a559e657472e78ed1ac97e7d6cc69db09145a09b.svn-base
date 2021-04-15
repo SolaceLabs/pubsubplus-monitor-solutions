@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appliances>
+  <publishTtl>30000</publishTtl>
+  <publishDmqEligible>true</publishDmqEligible>
+  <appliance>
+    <name>vmr1</name>
+    <poller-group>Appliance</poller-group>
+    <poller-group>Caches</poller-group>
+    <poller-group>Bridges</poller-group>
+    <poller-group>Direct and AD</poller-group>
+    <primary>
+	  <!-- IMPORTANT: these values are samples only. Update the host, cli-username and cli-password with correct values matching 
+	  the IP address and admin credentials of the Solace router you wish to monitor. Use the Enterprise Stats password utility 
+	  program to generate the encrypted version of your cli-password to place here -->
+      <semp-host>192.168.1.1:8080</semp-host>
+      <cli-username>admin</cli-username>
+      <cli-password>c1b7d190d8b647c738bebb0fc41dfad9</cli-password>
+    </primary>
+    <mgmt-msg-bus>
+	  <!-- IMPORTANT: these values are samples only. Update the host, client-username and password with correct values matching 
+	  the IP address and credentials of the Solace router you wish to Pump stats onto. Use the Enterprise Stats password utility 
+	  program to generate the encrypted version of your password to place here -->
+      <host>192.168.1.2</host>
+      <vpn>stats_sdt</vpn>
+      <client-username>stats</client-username>
+	  <password>352078205ab98cf8b89218b8cee27e33</password>
+      <container-factory-class>com.solace.psg.enterprisestats.statspump.containers.factories.SdtMapFactory</container-factory-class>
+    </mgmt-msg-bus>
+    <mgmt-msg-bus>
+	  <!-- IMPORTANT: these values are samples only. Update the host, client-username and password with correct values matching 
+	  the IP address and credentials of the Solace router you wish to Pump stats onto. Use the Enterprise Stats password utility 
+	  program to generate the encrypted version of your password to place here -->
+      <host>192.168.1.2</host>
+      <vpn>stats_json</vpn>
+      <client-username>stats</client-username>
+	  <password>352078205ab98cf8b89218b8cee27e33</password>
+      <container-factory-class>com.solace.psg.enterprisestats.statspump.containers.factories.JsonMapFactory</container-factory-class>
+    </mgmt-msg-bus>
+    <self-msg-bus>
+	  <!-- IMPORTANT: these values are samples only. Update the host, client-username and password with correct values matching 
+	  the IP address and credentials of the Solace router you wish to Pump stats onto. Use the Enterprise Stats password utility 
+	  program to generate the encrypted version of your password to place here -->
+      <host>192.168.1.2</host>
+      <!-- the following will allow the StatsPump to connect to any VPN it finds, except for those starting with "stats_" as we have different formats in those VPNs (as above) -->
+      <vpn-connection-acl-settings default-action="ALLOW">
+        <vpn-exception>stats_*</vpn-exception>
+      </vpn-connection-acl-settings>
+      <client-username>stats</client-username>
+	  <password>352078205ab98cf8b89218b8cee27e33</password>
+      <container-factory-class>com.solace.psg.enterprisestats.statspump.containers.factories.SempXmlFragmentFactory</container-factory-class>
+    </self-msg-bus>
+    <!-- If you want to by-pass publishing stats to a Solace Message Router and send directly to a StatsReceiver
+    <local-mgmt-msg-bus>
+      <local-listener-class>com.solace.psg.enterprisestats.receiver.StatsReceiver</local-listener-class>
+      <local-listener-config>stats-receiver.properties</local-listener-config>
+      <container-factory-class>com.solace.psg.enterprisestats.statspump.containers.factories.SdtMapFactory</container-factory-class>
+    </local-mgmt-msg-bus>
+    -->
+  </appliance>
+</appliances>
