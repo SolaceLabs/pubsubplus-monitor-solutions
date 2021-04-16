@@ -1,0 +1,4 @@
+router1 vpn1 default
+router1 vpn1 bridgeUser
+router2 vpn1 default
+router2 vpn1 bridgeUser

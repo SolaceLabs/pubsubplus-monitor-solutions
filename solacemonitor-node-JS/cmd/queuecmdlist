@@ -1,0 +1,3 @@
+Q1 30 <rpc semp-version="SOLTRV"> <show> <queue> <name>QUEUENAME</name> <vpn-name>VPN</vpn-name> </queue> </show> </rpc>
+Q2 30 <rpc semp-version="SOLTRV"> <show> <queue> <name>QUEUENAME</name> <vpn-name>VPN</vpn-name> <stats></stats> </queue> </show> </rpc>
+Q3 30 <rpc semp-version="SOLTRV"> <show> <queue> <name>QUEUENAME</name> <vpn-name>VPN</vpn-name> <rates></rates> </queue> </show> </rpc>

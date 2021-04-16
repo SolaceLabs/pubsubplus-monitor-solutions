@@ -1,0 +1,3 @@
+solace01 vpn2 testQ
+primary vpn1 testQ
+backup vpn1 testQ

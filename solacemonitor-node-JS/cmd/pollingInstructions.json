@@ -1,0 +1,90 @@
+{
+  "instructions": [
+    {
+      "description": "Commands for router level",
+      "cmdFile": "cmdlist",
+      "filenameTemplate": "$interval+$type+$hostname+$time",
+      "enabled": true
+    },
+    {
+      "description": "Commands for mvpn level",
+      "cmdFile": "mvpncmdlist",
+      "configFile": {
+        "fileName": "mvpnlist",
+        "columns": [ "hostname", "vpn" ]
+      },
+      "filenameTemplate": "$interval+$type+$hostname+$vpn+$time",
+      "enabled": true
+    },
+    {
+      "description": "Commands for network interface stats",
+      "cmdFile": "interfacecmdlist",
+      "configFile": {
+        "fileName": "interfacelist",
+        "columns": [ "hostname", "interface"]
+      },
+      "filenameTemplate": "$interval+$type+$hostname+$interface+$time",
+      "enabled": true
+    },
+    {
+      "description": "Commands for SolCache instance stats",
+      "cmdFile": "cachecmdlist",
+      "configFile": {
+        "fileName": "cachelist",
+        "columns": [ "hostname", "vpn" , "dc", "cc", "ci"]
+      },
+      "filenameTemplate": "$interval+$type+$hostname+$vpn+$ci+$time",
+      "enabled": true
+    },
+    {
+      "description": "Commands for clients with predefined prefixes",
+      "cmdFile": "clientpatterncmdlist",
+      "configFile": {
+        "fileName": "clientpatternlist",
+        "columns": [ "hostname", "vpn", "cn" ]
+      },
+      "filenameTemplate": "$interval+$type+$hostname+$vpn+$cn+$iter+$time",
+      "enabled": true
+    },
+    {
+      "description": "Commands for specific clients monitoring",
+      "cmdFile": "clientcmdlist",
+      "configFile": {
+        "fileName": "clientlist",
+        "columns": [ "hostname", "cn" ]
+      },
+      "filenameTemplate": "$interval+$type+$hostname+$cn+$time",
+      "enabled": true
+    },
+    {
+      "description": "Commands for specific client-username monitoring",
+      "cmdFile": "clientusernamecmdlist",
+      "configFile": {
+        "fileName": "clientusernamelist",
+        "columns": [ "hostname", "vpn", "cun" ]
+      },
+      "filenameTemplate": "$interval+$type+$hostname+$vpn+$cun+$time",
+      "enabled": true
+    },
+    {
+      "description": "Commands for message VPN bridges",
+      "cmdFile": "bridgecmdlist",
+      "configFile": {
+        "fileName": "bridgelist",
+        "columns": [ "hostname", "vpn", "bridge" ]
+      },
+      "filenameTemplate": "$interval+$type+$hostname+$vpn+$bridge+$time",
+      "enabled": true
+    },
+    {
+      "description": "Commands for queue endpoints",
+      "cmdFile": "queuecmdlist",
+      "configFile": {
+        "fileName": "queuelist",
+        "columns": [ "hostname", "vpn", "queuename" ]
+      },
+      "filenameTemplate": "$interval+$type+$hostname+$vpn+$time",
+      "enabled": true
+    }
+  ]
+}

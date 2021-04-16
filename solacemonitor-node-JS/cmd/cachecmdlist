@@ -1,0 +1,3 @@
+I1 60 <rpc semp-version="SOLTRV"> <show> <cache-instance> <name>CI</name> <cache-name>DC</cache-name> <vpn-name>VPN</vpn-name> <remote></remote> <status></status> </cache-instance> </show> </rpc> 
+I2 60 <rpc semp-version="SOLTRV"> <show> <cache-instance> <name>CI</name> <cache-name>DC</cache-name> <vpn-name>VPN</vpn-name> </cache-instance> </show> </rpc>
+I3 60 <rpc semp-version="SOLTRV"> <show> <distributed-cache> <name>DC</name> <vpn-name>VPN</vpn-name> </distributed-cache> </show> </rpc>

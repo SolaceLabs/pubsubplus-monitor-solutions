@@ -1,0 +1,5 @@
+C1 60 <rpc semp-version="SOLTRV"> <show> <client> <name>CN</name> <stats></stats> </client> </show> </rpc>
+C2 60 <rpc semp-version="SOLTRV"> <show> <client> <name>CN</name> <stats></stats> <queues></queues> </client> </show> </rpc>
+C3 60 <rpc semp-version="SOLTRV"> <show> <client> <name>CN</name> <connections></connections> </client> </show> </rpc> 
+C4 60 <rpc semp-version="SOLTRV"> <show> <client> <name>CN</name> <subscriptions></subscriptions> </client> </show> </rpc>
+C5 60 <rpc semp-version="SOLTRV"> <show> <client> <name>CN</name> <stats></stats> <detail></detail> </client> </show> </rpc>

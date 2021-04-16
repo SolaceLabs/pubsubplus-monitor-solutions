@@ -1,0 +1,4 @@
+CP1 120 <rpc semp-version="SOLTRV"> <show> <client> <name>CN</name> <vpn-name>VPN</vpn-name> <stats></stats> <count/> <num-elements>100</num-elements> </client> </show> </rpc>
+CP2 300 <rpc semp-version="SOLTRV"> <show> <client> <name>CN</name> <vpn-name>VPN</vpn-name> <stats></stats> <queues></queues> <count/> <num-elements>100</num-elements> </client> </show> </rpc>
+CP3 120 <rpc semp-version="SOLTRV"> <show> <client> <name>CN</name> <vpn-name>VPN</vpn-name> <connections></connections> <count/> <num-elements>100</num-elements> </client> </show> </rpc>
+

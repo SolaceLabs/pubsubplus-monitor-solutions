@@ -1,0 +1,4 @@
+M1 30 <rpc semp-version="SOLTRV"> <show> <message-vpn> <vpn-name>VPN</vpn-name> <stats></stats> <detail></detail> </message-vpn> </show> </rpc>
+M2 60 <rpc semp-version="SOLTRV"> <show> <message-spool> <vpn-name>VPN</vpn-name> </message-spool> </show> </rpc>
+M3 60 <rpc semp-version="SOLTRV"> <show> <message-spool> <vpn-name>VPN</vpn-name> <rates></rates> </message-spool> </show> </rpc>
+M4 60 <rpc semp-version="SOLTRV"> <show> <message-spool> <vpn-name>VPN</vpn-name> <stats></stats> </message-spool> </show> </rpc>

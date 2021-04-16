@@ -1,0 +1,24 @@
+{
+  "solaceHosts": [
+    {"url": "primary:8080", "username": "admin", "pwd": "admin", "sempVer": "soltr/8_4_0"},
+    {"url": "backup:8080", "username": "admin", "pwd": "admin", "sempVer": "soltr/8_4_0"}
+  ],
+  "influxDB": {
+    "db": "solacemonitor",
+    "username": "solace",
+    "pwd": "solace",
+    "host": "host.docker.internal:8086",
+    "continuousQuery": {
+      "duration": "5m",
+      "rpd": "archive",
+      "rp": "live",
+      "adminUser": "admin",
+      "adminPassword": "admin"
+    }
+  },
+  "interface_stat": {
+    "networkInterface": "eth0"
+  }
+}
+
+

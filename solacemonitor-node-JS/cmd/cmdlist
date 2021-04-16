@@ -1,0 +1,9 @@
+1 10 <rpc semp-version="SOLTRV"> <show> <hostname></hostname> </show> </rpc>
+2 10 <rpc semp-version="SOLTRV"> <show> <router-name></router-name> </show> </rpc>
+3 30 <rpc semp-version="SOLTRV"> <show> <stats> <client> <detail></detail> </client> </stats> </show> </rpc> 
+4 10 <rpc semp-version="SOLTRV"> <show> <ip> <vrf> <name>management</name> </vrf> </ip> </show> </rpc> 
+5 10 <rpc semp-version="SOLTRV"> <show> <compression></compression> </show> </rpc> 
+6 10 <rpc semp-version="SOLTRV"> <show> <memory></memory> </show> </rpc> 
+7 10 <rpc semp-version="SOLTRV"> <show> <service></service> </show> </rpc> 
+8 30 <rpc semp-version="SOLTRV"> <show> <redundancy></redundancy> </show> </rpc>
+9 30 <rpc semp-version="SOLTRV"> <show> <message-spool> <detail></detail> </message-spool> </show> </rpc>
