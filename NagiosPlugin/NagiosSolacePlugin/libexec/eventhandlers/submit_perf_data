@@ -1,0 +1,38 @@
+#!/bin/bash
+	 
+# Write passive check perf data to Nagios Graph RRDs
+ 
+# get the current date/time in seconds since UNIX epoch
+
+# perl -d /usr/local/nagios/libexec/insert.pl "$datetime||GBMSOLACEDEV01||SqlWriter||Service OK||s1=111;;"
+
+s1=0   #initialize
+s2=0
+s3=0
+s4=0
+
+MAXCOUNT=120
+count=1
+
+echo "-----------------"
+while [ "$count" -le $MAXCOUNT ]      # Generate 10 ($MAXCOUNT) random integers.
+do
+  s1=$RANDOM
+  s2=$RANDOM
+  s3=$RANDOM
+  s4=$RANDOM
+
+# echo "Generating stat with random value $s1 $s2 $s3 $s4"
+
+
+datetime=`date +%s`
+perl /usr/local/nagios/libexec/insert.pl "$datetime||GBMSOLACEDEV01||SqlWriter||Service OK||stat=$s1;"
+
+# echo adding data $s1
+# rrdtool updatev test.rrd N:$s1
+
+  let "count += 1"  # Increment count.
+  sleep 1
+done
+
+echo "-----------------"

@@ -1,0 +1,49 @@
+Disclaimer: Provided as is. Solace liability reduced to the full extend permitted by law.
+
+Requirements:
+Following cpan modules
+Nagios::Plugin
+Nagios::Plugin::DieNicely
+XML::LibXML
+File::Basename
+LWP::UserAgent
+
+Install:
+solace.cfg defines the commands.you might want to modify this to set threshold for all the system directly in the command alias.
+for example with the environemnt check,setting NPU warning to 90 and critical to 110, for ALL systems, change:
+define command{
+	command_name	env
+	command_line	environment.pl -r $ARG1$ -u $ARG2$ -p $ARG3$ --wf $ARG4$ --cf $ARG5$ --wc $ARG6$ --cc $ARG7$ --wn $ARG8$ --cn $ARG9$
+	}
+to :
+define command{
+	command_name	env
+	command_line	environment.pl -r $ARG1$ -u $ARG2$ -p $ARG3$ --wf $ARG4$ --cf $ARG5$ --wc $ARG6$ --cc $ARG7$ --wn 90 --cn 110
+	}
+
+note that in this case, you need to modify the host cfg file from:
+
+define service{
+        use                             generic-service         ; Name of service template to use
+        host_name                       <routername>
+        service_description             env
+        check_command                   env!<ip:port>!<user!<password>!<warning fan threshold>!<critical fan threshold>!<warning chassis threshold>!<critical chassis threshold>!<warning npu threshold>!<critical npu threshold>
+        }
+to
+define service{
+        use                             generic-service         ; Name of service template to use
+        host_name                       <routername>
+        service_description             env
+        check_command                   env!<ip:port>!<user!<password>!<warning fan threshold>!<critical fan threshold>!<warning chassis threshold>!<critical chassis threshold>
+        }
+
+to proceed with installation, complete steps below:
+
+cp solace.cfg to /etc/nagios-plugins/config/
+copy the plugins to the plugins directory.
+cp *.pl to /usr/lib/nagios/plugins/
+chmod +x /usr/lib/nagios/plugins/*.pl
+chown nagios:nagios /usr/lib/nagios/plugins/*.pl
+modify template for let say myrouter and copy it to nagios conf directory :
+cp solace_host_template_nagios2.cfg .. to /etc/nagios3/conf.d/myrouter_nagios2.cfg
+restart nagios with sudo service nagios restart or sudo /etc/init.d/nagios restart

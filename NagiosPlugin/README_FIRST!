@@ -1,0 +1,16 @@
+Nagios Plugin for Solace 2.0
+-----------------------------
+
+The Nagios Plugin is a set of Perl executables that can be used to poll a Solace appliance. The initial version was created ~2013 as a PoC version and can be found in the "archive" directory. Version 2.0 was added in Oct 2015 - It uses the same basic 
+framework of the initial version, the main change being that it has been made production ready and operations-friendly as part of the work for GBM. Summary of changes in v2.0:
+
+1. Security: All appliance credentials are in a single file, read-only by nagios and owned by root. Though not a completely acceptable in all production environments, it is a a step forward from v1.0 that sends out passwords in the command line.
+2. Error handling: Loads of error handling for SEMP requests for retrieving appliance stats, as well as the general running of Nagios itself
+3. Automation: A set of perl scripts have been added for creating Nagios configiuration files based on questions asked. Config files do not need to be manually maintained and this reduces the risk of human error.
+4. Cleanup: Loads of general cleanup. v1.0 was a PoC and had hardcoded variables and passwords. Refactoring and rewriting to the scripts to make Nagios more stable and its behavior deterministic.
+5. Features: Almost all appliance scripts have been re-written so that they either return the correct output or more detailed output. Notable ones are redundancy status, replication status, message spool statistics
+6. Documentation: NagiosCookBook.docx contains details of setting up Nagios from scratch and installing the Solace plugin.
+7. Passive Checks: Contains the admin listener - a passive check written for GBM ( asynchronously submit an event to Nagios as opposed to it polling for information)
+8. Stability: This version has been deployed to a prod env and tested for over 6 months.
+
+Happy Monitoring!
