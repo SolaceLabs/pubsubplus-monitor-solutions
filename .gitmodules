@@ -1,3 +1,6 @@
 [submodule "solace-prometheus-exporter"]
 	path = solace-prometheus-exporter
 	url = git@github.com:solacecommunity/solace-prometheus-exporter
+[submodule "solace-monitoring-extension"]
+	path = solace-monitoring-extension
+	url = https://github.com/koverton/solace-monitoring-extension
