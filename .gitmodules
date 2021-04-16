@@ -4,3 +4,6 @@
 [submodule "solace-monitoring-extension"]
 	path = solace-monitoring-extension
 	url = https://github.com/koverton/solace-monitoring-extension
+[submodule "solace-syslog-collector"]
+	path = solace-syslog-collector
+	url = https://github.com/solacese/solace-syslog-collector
