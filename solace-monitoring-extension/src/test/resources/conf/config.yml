@@ -1,0 +1,33 @@
+### ANY CHANGES TO THIS FILE DOES NOT REQUIRE A RESTART ###
+
+# This will create this metric in a specific component so that the same
+# custom metric name will be distinct under different applications
+# see: https://community.appdynamics.com/t5/Knowledge-Base/How-to-troubleshoot-missing-custom-metrics-or-extensions-metrics/ta-p/28695
+metricPrefix: "Server|Component:10001|Custom Metrics|Solace"
+
+# List of Solace Servers
+servers:
+  - mgmtUrl: "http://localhost:8080/SEMP"
+    adminUser: "admin"
+    password: "admin"
+    #displayName is required. Displays your server name in metric path.
+    displayName: "Primary"
+    # requestTimeout: 1000000 # one second timeout
+    redundancy: "STANDALONE"
+    vpnExclusionPolicy: "blacklist"
+    excludeMsgVpns: ["#config-sync"]
+    queueExclusionPolicy: "blacklist"
+    excludeQueues: ["#P2P/.*"]
+    topicEndpointExclusionPolicy: "blacklist"
+    excludeTopicEndpoints: ["log/.*"]
+    excludeTemporaries: true
+    excludeExtendedStats: false
+    excludeDiscardMetrics: false
+
+
+
+# number of concurrent tasks
+numberOfThreads: 2
+
+# timeout for the thread
+# threadTimeout: 30
