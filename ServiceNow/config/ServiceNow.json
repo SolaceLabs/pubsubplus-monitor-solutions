@@ -1,0 +1,95 @@
+{
+
+	"host": {
+		"META-Comment": "Monitoring host info. Edit per site",
+		"META-Version": "1.1",
+
+		"source": "ip-172-31-29-216",
+		"path": "/app/psmon/RTViewSolaceMonitor/",
+		"send-alerts": true,
+		"additional-info": true,
+		"verbose": false
+	},
+
+	"servers": [{
+			"META-Comment": "ServiceNow endpoint info. Edit per site",
+
+			"url": "https://tmxdevelopment.service-now.com",
+			"endpoint": "/api/global/em/jsonv2",
+			"username": "test_int_1",
+			"password": "uri=%2Fsys_user.do%3Fsys_id%3D917",
+			"enabled": false
+		},
+		{
+			"url": "http://localhost:3000",
+			"endpoint": "post",
+			"username": "",
+			"password": "",
+			"enabled": false
+		},
+		{
+			"url": "http://localhost:3001",
+			"endpoint": "post",
+			"username": "",
+			"password": "",
+			"enabled": false
+		}
+	],
+
+	"alert_blacklist": {
+			"nodes" : [
+              "META-Comment: List of Nodes to suppress alerts"
+			],
+			"events" : [
+              "META-Comment: List of Events to suppress alerts"
+            ]
+		},
+
+	"filters": {
+		"META-Comment": "RegEx for parsing input data. DO NOT EDIT THIS SECTION",
+
+		"default": "(?P<connection>.*)$",
+		"SolEventModuleBrokerAlert": "(?P<connection>.*)~(?P<router>[a-zA-Z0-9 \\-]*)_(?P<event>[A-Z_]*)_(.*)$",
+		"SolEventModuleVpnAlert": "(?P<connection>.*)~(?P<vpn>.*)~(?P<router>[a-zA-Z0-9 \\-]*)_(?P<event>[A-Z_]*)_(.*)$",
+		"SolEventModuleClientAlert": "(?P<connection>.*)~(?P<vpn>.*)~(?P<clientname>.*)~(?P<router>[a-zA-Z0-9 \\-]*)_(?P<event>[A-Z_]*)_(.*)$",
+		"SolBridgeInboundByteRateHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<bridge>.*)$",
+		"SolBridgeInboundMsgRateHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<bridge>.*)$",
+		"SolBridgeOutboundByteRateHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<bridge>.*)$",
+		"SolBridgeOutboundMsgRateHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<bridge>.*)$",
+		"SolClientInboundByteRateHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<client>.*)$",
+		"SolClientInboundMsgRateHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<client>.*)$",
+		"SolClientOutboundByteRateHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<client>.*)$",
+		"SolClientOutboundMsgRateHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<client>.*)$",
+		"SolClientSlowSubscriber": "(?P<connection>.*)~(?P<vpn>.*)~(?P<client>.*)$",
+		"SolEndpointPendingMsgsHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<queue>.*)$",
+		"SolEndpointSpoolUsageHigh": "(?P<connection>.*)~(?P<vpn>.*)~(?P<queue>.*)$",
+		"SolGuaranteedMsgingHbaLinkDown": "(?P<connection>.*)~(?P<hbachannel>.*)$",
+		"SolGuaranteedMsgingMatePortDown": "(?P<connection>.*)~(?P<slotno>.*)$",
+		"SolGuaranteedMsgingNoMsgSpoolAdActive": "(?P<connection>.*)~(?P<hostname>.*)~(?P<materoutername>.*)$",
+		"SolMsgRouterCpuTemperatureHigh": "(?P<connection>.*)~(?P<name>.*)$",
+		"SolMsgRouterCspfNeighborDown": "(?P<connection>.*)~(?P<name>.*)$",
+		"SolMsgRouterFanSensorCheckFailed": "(?P<connection>.*)~(?P<name>.*)$",
+		"SolMsgRouterInterfaceDown": "(?P<connection>.*)~(?P<interface>.*)$",
+		"SolMsgRouterNABUsageHigh": "(?P<connection>.*)~(?P<slot>.*)$",
+		"SolMsgRouterTemperatureSensorCheckFailed": "(?P<connection>.*)~(?P<name>.*)$",
+		"SolMsgRouterVoltageSensorCheckFailed": "(?P<connection>.*)~(?P<name>.*)$",
+		"SolVpnConnectionCountHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolVpnInboundByteRateHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolVpnInboundDiscardRateHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolVpnInboundMsgRateHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolVpnOutboundByteRateHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolVpnOutboundDiscardRateHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolVpnOutboundMsgRateHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolVpnPendingMsgsHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolVpnSubscriptionCountHigh": "(?P<connection>.*)~(?P<vpn>.*)$",
+		"SolEndpointNoBridgeClient": "(?P<connection>.*)~(?P<vpn>.*)~(?P<queue>.*)$",
+		"SolEndpointNoBridgeTopic": "(?P<connection>.*)~(?P<vpn>.*)~(?P<queue>.*)$"
+	},
+
+	"severities": {
+		"META-Comment": "Solace Monitor severity to ServiceNow severity mapping. DO NOT EDIT THIS SECTION",
+
+		"1": "3",
+		"2": "2"
+	}
+}

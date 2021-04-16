@@ -1,0 +1,13 @@
+{
+   "records":[
+      {
+         "node":"local-docker",
+         "resource":"local-docker/1",
+         "severity":"1",
+         "source":"ramesh.natarajan.local",
+         "type":"VPN",
+         "description":"Test Alert Solace Monitor"
+      }
+   ]
+}
+
