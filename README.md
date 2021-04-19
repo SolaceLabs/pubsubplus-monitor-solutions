@@ -51,7 +51,3 @@ This java based solution consists of a core process (the Pump) that pulls stats 
 
 It can also run in 'local mode" where the reciver and the Pump are in the same process, avoiding the republishing of stats onto the message bus.
 
-## Other known implementations
-- Apple has built a Splunk solution for both Metrics and Events, which they own.
-- Voicebase has a sophisticated custom solution built in Elk.
-Menards uses Zabbix.
