@@ -10,3 +10,6 @@
 [submodule "solace-custom-monitor-cloudwatch"]
 	path = solace-custom-monitor-cloudwatch
 	url = https://github.com/SolaceServices/solace-custom-monitor-cloudwatch.git
+[submodule "solace-custom-monitor-datadog"]
+	path = solace-custom-monitor-datadog
+	url = https://github.com/SolaceServices/solace-custom-monitor-datadog.git
