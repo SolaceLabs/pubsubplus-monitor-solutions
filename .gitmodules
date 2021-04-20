@@ -19,3 +19,6 @@
 [submodule "solace-custom-monitor-servicenow"]
 	path = solace-custom-monitor-servicenow
 	url = https://github.com/SolaceServices/solace-custom-monitor-servicenow.git
+[submodule "solace-custom-monitor-splunk"]
+	path = solace-custom-monitor-splunk
+	url = https://github.com/SolaceServices/solace-custom-monitor-splunk.git
