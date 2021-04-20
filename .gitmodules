@@ -25,3 +25,6 @@
 [submodule "solace-custom-monitor-nodejs"]
 	path = solace-custom-monitor-nodejs
 	url = https://github.com/SolaceServices/solace-custom-monitor-nodejs.git
+[submodule "solace-custom-monitor-nagios"]
+	path = solace-custom-monitor-nagios
+	url = https://github.com/SolaceServices/solace-custom-monitor-nagios.git
