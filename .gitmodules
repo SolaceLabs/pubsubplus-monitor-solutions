@@ -13,3 +13,6 @@
 [submodule "solace-custom-monitor-datadog"]
 	path = solace-custom-monitor-datadog
 	url = https://github.com/SolaceServices/solace-custom-monitor-datadog.git
+[submodule "solace-custom-monitor-appdynamics"]
+	path = solace-custom-monitor-appdynamics
+	url = https://github.com/SolaceServices/solace-custom-monitor-appdynamics.git
