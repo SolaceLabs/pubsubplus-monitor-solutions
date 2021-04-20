@@ -31,3 +31,6 @@
 [submodule "solace-custom-monitor-elk"]
 	path = solace-custom-monitor-elk
 	url = https://github.com/SolaceServices/solace-custom-monitor-elk.git
+[submodule "solace-custom-monitor-solgeneos-legacy"]
+	path = solace-custom-monitor-solgeneos-legacy
+	url = https://github.com/SolaceServices/solace-custom-monitor-solgeneos-legacy.git
