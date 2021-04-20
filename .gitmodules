@@ -28,3 +28,6 @@
 [submodule "solace-custom-monitor-nagios"]
 	path = solace-custom-monitor-nagios
 	url = https://github.com/SolaceServices/solace-custom-monitor-nagios.git
+[submodule "solace-custom-monitor-elk"]
+	path = solace-custom-monitor-elk
+	url = https://github.com/SolaceServices/solace-custom-monitor-elk.git
