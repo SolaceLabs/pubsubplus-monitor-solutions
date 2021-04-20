@@ -1,8 +1,0 @@
-hostA default
-hostA vpn1
-hostB default
-hostB vpn1
-hostC default
-hostC vpn1
-hostD default
-hostD vpn1

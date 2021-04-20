@@ -1,3 +1,0 @@
-primary vpn1 vpn2%vpn1
-backup vpn1 vpn2%vpn1
-solace01 vpn2 vpn2%vpn1

@@ -1,3 +1,0 @@
-B1 30 <rpc semp-version="SOLTRV"> <show> <bridge> <bridge-name-pattern>BRIDGE</bridge-name-pattern> <vpn-name-pattern>VPN</vpn-name-pattern> <stats></stats> </bridge> </show> </rpc>
-B2 30 <rpc semp-version="SOLTRV"> <show> <bridge> <bridge-name-pattern>BRIDGE</bridge-name-pattern> <vpn-name-pattern>VPN</vpn-name-pattern> </bridge> </show> </rpc>
-
