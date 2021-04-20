@@ -1,1 +1,1 @@
-# pubsubplus-monitor-solutions
+# solace-custom-monitor-solutions
