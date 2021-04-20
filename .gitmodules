@@ -34,3 +34,6 @@
 [submodule "solace-prometheus-exporter"]
 	path = solace-prometheus-exporter
 	url = git@github.com:solacecommunity/solace-prometheus-exporter.git
+[submodule "solace-custom-monitor-enterprisestats"]
+	path = solace-custom-monitor-enterprisestats
+	url = https://github.com/SolaceServices/solace-custom-monitor-enterprisestats.git
