@@ -1,2 +1,0 @@
-
-rrdtool create test.rrd --step 1 DS:stat:GAUGE:60:0:2147483647 RRA:AVERAGE:0.5:60:1440 RRA:MIN:0.5:60:1440 RRA:MAX:0.5:60:1440 
