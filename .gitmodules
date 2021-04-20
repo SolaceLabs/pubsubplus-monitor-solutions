@@ -7,3 +7,6 @@
 [submodule "solgeneos-custom-monitors"]
 	path = solgeneos-custom-monitors
 	url = https://github.com/solacese/solgeneos-custom-monitors
+[submodule "solace-custom-monitor-cloudwatch"]
+	path = solace-custom-monitor-cloudwatch
+	url = https://github.com/SolaceServices/solace-custom-monitor-cloudwatch.git
