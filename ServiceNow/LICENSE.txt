@@ -1,7 +1,0 @@
-Copyright (C) 2019 Solace
-
-ServiceNow Plugging is Solace PSG developed software that requires and runs on top of
-Solace PubSub+ Monitor.
-
-This is NOT an officially supported product by Solace.
-

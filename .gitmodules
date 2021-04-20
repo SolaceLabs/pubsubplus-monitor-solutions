@@ -16,3 +16,6 @@
 [submodule "solace-custom-monitor-appdynamics"]
 	path = solace-custom-monitor-appdynamics
 	url = https://github.com/SolaceServices/solace-custom-monitor-appdynamics.git
+[submodule "solace-custom-monitor-servicenow"]
+	path = solace-custom-monitor-servicenow
+	url = https://github.com/SolaceServices/solace-custom-monitor-servicenow.git
