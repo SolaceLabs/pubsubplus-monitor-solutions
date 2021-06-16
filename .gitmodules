@@ -37,3 +37,6 @@
 [submodule "solace-custom-monitor-enterprisestats"]
 	path = solace-custom-monitor-enterprisestats
 	url = https://github.com/SolaceServices/solace-custom-monitor-enterprisestats.git
+[submodule "solace-custom-monitor-syslog-collector"]
+	path = solace-custom-monitor-syslog-collector
+	url = https://github.com/SolaceServices/solace-custom-monitor-syslog-collector
