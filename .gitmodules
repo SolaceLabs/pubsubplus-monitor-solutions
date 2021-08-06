@@ -1,9 +1,6 @@
 [submodule "solace-syslog-collector"]
 	path = solace-syslog-collector
 	url = https://github.com/solacese/solace-syslog-collector
-[submodule "solgeneos-custom-monitors"]
-	path = solgeneos-custom-monitors
-	url = https://github.com/solacese/solgeneos-custom-monitors
 [submodule "solace-custom-monitor-cloudwatch"]
 	path = solace-custom-monitor-cloudwatch
 	url = https://github.com/SolaceServices/solace-custom-monitor-cloudwatch.git
